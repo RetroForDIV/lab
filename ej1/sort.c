@@ -22,9 +22,6 @@ void insertion_sort(int a[], unsigned int length) {
     }
 }
 
-
-
-
 //gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c sort.c
 //gcc -Wall -Werror -Wextra -pedantic -std=c99 -o sorter *.o main
 //./sorter input/example-unsorted.in
