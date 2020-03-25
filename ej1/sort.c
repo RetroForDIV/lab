@@ -18,9 +18,3 @@ void insertion_sort(int a[], unsigned int length) {
         insert(a, i);
     }
 }
-
-//aber si funciona
-
-//hola que tal
-
-//la concha de tu madre allboys
