@@ -1,4 +1,4 @@
-os#include <assert.h>
+#include <assert.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -8,13 +8,26 @@ os#include <assert.h>
 #include "sort.h"
 
 
-static void insert(int a[], unsigned int i) {
-    /* needs implementation */
+void insert(int array[], unsigned int i) {
+    unsigned int j;
+    for (j = i; (goes_before(array[j], array[j-1])); j--) {
+           
+        swap(array,j-1,j);
+    }
 }
 
 void insertion_sort(int a[], unsigned int length) {
     for (unsigned int i = 1u; i < length; ++i) {
-        /* needs implementation */
         insert(a, i);
     }
 }
+
+
+
+
+//gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c sort.c
+//gcc -Wall -Werror -Wextra -pedantic -std=c99 -o sorter *.o main
+
+/*    */
+
+
