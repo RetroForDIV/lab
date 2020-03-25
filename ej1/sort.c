@@ -18,3 +18,6 @@ void insertion_sort(int a[], unsigned int length) {
         insert(a, i);
     }
 }
+
+//aber si funciona
+
