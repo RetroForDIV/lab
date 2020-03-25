@@ -9,13 +9,12 @@
 
 
 void insert(int array[], unsigned int i) {
-    unsigned int j = i;
+    unsigned int j;
 
-    if (goes_before(array[j], array[j-1])){
+    for (j = i; goes_before(array[j], array[j-1]); j--) {
            
         swap(array,j,j-1);
 
-        j = j-1;
     }
 }
 

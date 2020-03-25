@@ -44,9 +44,15 @@ for (unsigned int i; i < ARRAY_SIZE; i++) {
         }
 
         printf("el arreglo ordenado es:\n");
-        for (i = 0; i < ARRAY_SIZE; i++)
+        for (i = 0; i < ARRAY_SIZE; i++){
             printf( "%d ", array[i]) ;
+        }
+        
+    printf("\n");
+
 }
 
+
 //upload
+
 
