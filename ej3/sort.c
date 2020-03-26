@@ -47,6 +47,22 @@ void quick_sort(int a[], unsigned int length) {
 //     gcc -Wall -Werror -Wextra -pedantic -std=c99 -no-pie -o sorter *.o main
 //     ./sorter input/example-unsorted.in
 
+proc partition (in/out a: array[1..n] of T, in lft, rgt: nat, out ppiv: nat)
+var i,j: nat
+ppiv:= lft
+i:= lft+1
+j:= rgt
+do i ≤ j ! if a[i] ≤ a[ppiv] ! i:= i+1
+a[j] ≥ a[ppiv] ! j:= j-1
+a[i] > a[ppiv] ^ a[j] < a[ppiv] ! swap(a,i,j)
+i:= i+1
+j:= j-1
+fi
+od
+swap(a,ppiv,j) {dejando el pivot en una posición más central}
+ppiv:= j {señalando la nueva posición del pivot }
+end proc
+
 
 */
 
