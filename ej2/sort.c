@@ -10,6 +10,7 @@
 
 static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
     unsigned int pivot;
+    pivot = 0;
     if (goes_before(der, izq)){
         partition(a, izq, der);
         quick_sort_rec(a, izq, pivot-1);
@@ -17,8 +18,19 @@ static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
     
     }
 }
+
+void quick_sort(int a[], unsigned int length) {
+    quick_sort_rec(a, 0u, (length == 0u) ? 0u : length - 1u);
+}
+
+
+
  /* 
  
+//     gcc -Wall -Werror -Wextra -pedantic -std=c99 -no-pie -c array_helpers.c sort.c
+//      gcc -Wall -Werror -Wextra -pedantic -std=c99 -no-pie -o sorter *.o main
+//      ./sorter input/example-unsorted.in
+
     needs implementation 
 
      no implementes partition, ya está implementado en sort_helpers.o
