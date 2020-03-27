@@ -63,6 +63,60 @@ swap(a,ppiv,j) {dejando el pivot en una posición más central}
 ppiv:= j {señalando la nueva posición del pivot }
 end proc
 
+unsigned int merge(int * c, unsigned int lft, unsigned int rgt) f
+unsigned int ppiv = lft;
+unsigned int i = lft+1;
+unsigned int j = rgt-1;
+while (i <= j) f
+if (c[i] <= c[ppiv]) i++;
+else if (c[j] >= c[ppiv]) j- -;
+else f
+swap(c,i,j);
+i++; j- -;
+g
+g
+swap(c,ppiv,j);
+ppiv = j;
+return ppiv;
+
+
+void qsort(int * b, unsigned int lft, unsigned int rgt) f
+if (lft + 1 < rgt) f
+unsigned int ppiv = partition(b,lft,rgt);
+qsort(b,lft,ppiv);
+qsort(b,ppiv+1,rgt);
+g
+g
+
+unsigned int partition(int * c, unsigned int lft, unsigned int rgt) f
+unsigned int ppiv = lft;
+unsigned int i = lft+1;
+unsigned int j = rgt;
+while (i <= j) f
+if (c[i] <= c[ppiv]) i++;
+else if (c[j] >= c[ppiv]) j- -;
+else f
+swap(c,i,j);
+i++; j- -;
+g
+g
+swap(c,ppiv,j);
+ppiv = j;
+return ppiv;
+g
+
+void qsort(int * b, unsigned int lft, unsigned int rgt) f
+if (lft < rgt) f
+unsigned int ppiv = partition(b,lft,rgt);
+qsort(b,lft,ppiv-1);
+qsort(b,ppiv+1,rgt);
+g
+g
+int a[n] = f9, 3, 1, 3, 5, 2, 7g;
+int main() f
+qsort(a,0,n-1);
+g
+
 
 */
 
