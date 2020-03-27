@@ -67,14 +67,14 @@ int main(int argc, char *argv[]) {
     selection_sort(copy, length);
 
     /* show statistics for selection_sort */
-    printf("statistics for selection_sort\n");
+    printf("\nstatistics for selection_sort\n");
     printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
     
     /* all the same for insertion_sort */
     insertion_sort(copy, length);
 
     /* show statistics for selection_sort */
-    printf("statistics for insertion_sort\n");
+    printf("\nstatistics for insertion_sort\n");
     printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
     /* Usando la idea de las líneas de códigos anteriores
        muestre las estadísticas (tiempo de ejecución, número de comparaciones e 
@@ -89,8 +89,9 @@ int main(int argc, char *argv[]) {
     quick_sort(copy, length);
 
     /* show statistics for selection_sort */
-    printf("statistics for quick_sort\n");
+    printf("\nstatistics for quick_sort\n");
     printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
+    printf("\n");
     /* Usando la idea de las líneas de códigos anteriores
        muestre las estadísticas (tiempo de ejecución, número de comparaciones e 
        intercambios realizados) para quick_sort. No te olvides que antes debes
@@ -101,9 +102,10 @@ int main(int argc, char *argv[]) {
 
   
     /* check if it is sorted */
-    assert(array_is_sorted(array, length));
+    // assert(array_is_sorted(array, length));
 
     /* check if it is a permutation of original */
-    assert(array_is_permutation_of(copy, array, length));
+    // assert(array_is_permutation_of(copy, array, length));
+
     return (EXIT_SUCCESS);
 }
