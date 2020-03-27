@@ -8,15 +8,34 @@
 #include "sort.h"
 
 
-static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
+static unsigned int partition(int a[], unsigned int izq, unsigned int der)  {
 
-    /* Needs implementation */
+    unsigned int i,j,pivot;
 
-    /* Permutes elements of a[izq..der] and returns pivot such that:
-     - izq <= pivot <= der
-     - elements in a[izq,pivot) all 'go_before' (according to function goes_before) a[pivot]
-     - a[pivot] 'goes_before' all the elements in a(pivot,der]
-    */
+    pivot = izq;
+    i = izq+1;
+    j = der;
+    
+
+    while (i <= j) {
+
+        if (a[i] <= a[pivot]){
+            i++;
+        }
+        if (a[j] >= a[pivot]){
+            j--;
+        }
+        if (a[i] > a[pivot] && a[j] < a[pivot]){
+            swap(a,i,j);
+            i++;
+            j--;
+        }
+    }
+
+    swap(a,a[pivot],a[j]);
+    pivot = j;
+
+    return pivot;
 }
 
 static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
@@ -39,14 +58,11 @@ void quick_sort(int a[], unsigned int length) {
 
 
 
- /*
-
- 
-
 //     gcc -Wall -Werror -Wextra -pedantic -std=c99 -no-pie -c array_helpers.c sort.c
 //     gcc -Wall -Werror -Wextra -pedantic -std=c99 -no-pie -o sorter *.o main
 //     ./sorter input/example-unsorted.in
 
+/*
 proc partition (in/out a: array[1..n] of T, in lft, rgt: nat, out ppiv: nat)
 var i,j: nat
 ppiv:= lft
@@ -120,3 +136,10 @@ g
 
 */
 
+    /* Needs implementation */
+
+    /* Permutes elements of a[izq..der] and returns pivot such that:
+     - izq <= pivot <= der
+     - elements in a[izq,pivot) all 'go_before' (according to function goes_before) a[pivot]
+     - a[pivot] 'goes_before' all the elements in a(pivot,der]
+    */
