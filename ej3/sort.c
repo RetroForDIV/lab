@@ -16,26 +16,25 @@ static unsigned int partition(int a[], unsigned int izq, unsigned int der)  {
     i = izq+1;
     j = der;
     
-
     while (i <= j) {
 
-        if (a[i] <= a[pivot]){
-            i++;
+        if (goes_before(a[i], a[pivot])){
+                i++;
         }
-        if (a[j] >= a[pivot]){
-            j--;
+        else if (goes_before(a[pivot], a[j])){
+                j--;
         }
-        if (a[i] > a[pivot] && a[j] < a[pivot]){
-            swap(a,i,j);
-            i++;
-            j--;
+        else {
+                swap(a,i,j);
+                i++;
+                j--;
         }
     }
 
-    swap(a,a[pivot],a[j]);
+    swap(a,pivot,j);
     pivot = j;
 
-    return pivot;
+    return (pivot);
 }
 
 static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
@@ -120,19 +119,6 @@ swap(c,ppiv,j);
 ppiv = j;
 return ppiv;
 g
-
-void qsort(int * b, unsigned int lft, unsigned int rgt) f
-if (lft < rgt) f
-unsigned int ppiv = partition(b,lft,rgt);
-qsort(b,lft,ppiv-1);
-qsort(b,ppiv+1,rgt);
-g
-g
-int a[n] = f9, 3, 1, 3, 5, 2, 7g;
-int main() f
-qsort(a,0,n-1);
-g
-
 
 */
 
